@@ -4,12 +4,18 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  mounted() {
+    axios.get('/hi').then(res =>{
+      console.log(res.data)
+    });
   }
 }
 </script>
