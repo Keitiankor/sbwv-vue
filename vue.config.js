@@ -2,12 +2,13 @@ const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
     transpileDependencies: true,
 
-    outputDir: "../../backend/spring-boot-with-vue/src/main/resources/static",
+    outputDir: "../boot/src/main/resources",
 
     devServer: {
         proxy: {
-            "/": {
-                target: "http://localhost:8080",
+            "/hi": {
+                target: "http://localhost:9001",
+                ws: true,
                 changeOrigin: true,
             },
         },
